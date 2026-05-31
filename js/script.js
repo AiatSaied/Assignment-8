@@ -494,7 +494,6 @@ function displayRecipe(recipe) {
       </div>
     `;
   }
-
   var currentRecipeIndex = 0;
 }
 
