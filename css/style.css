@@ -108,6 +108,32 @@ nav img {
   nav img {
     margin-right: 12px;
   }
+  .navbar .navbar-collapse {
+    border-top: 1px solid #ffedd4;
+    padding-block: 12px;
+    margin-top: 16px;
+  }
+}
+
+.navbar .navbar-toggler {
+  width: 24px;
+  height: 24px;
+  border: none !important;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.navbar .navbar-toggler i {
+  color: var(--main-gray);
+}
+.navbar .navbar-toggler:focus {
+  outline-style: none !important;
+  box-shadow: none !important;
+}
+.navbar .navbar-toggler:hover i {
+  color: var(--main-color);
 }
 /* Main Section */
 main {
