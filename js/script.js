@@ -399,21 +399,176 @@ var recipes = [
       "Reserve a cup of starchy pasta water; it's the secret to a silky smooth sauce.",
     ],
   },
+  {
+    name: "Caesar Salad",
+    category: "American",
+    difficulty: "Easy",
+    image: "/Images/Caesar Salad.avif",
+    rating: "4.7",
+    reviews: "(410 reviews)",
+    prepTime: 15,
+    cookTime: 10,
+    servings: "2 people",
+    description:
+      "Crisp romaine lettuce tossed with creamy Caesar dressing, croutons, and parmesan.",
+    ingredients: [
+      "1 large romaine lettuce, chopped",
+      "1/2 cup croutons",
+      "40g parmesan cheese, shaved",
+      "1 chicken breast (optional)",
+      "2 tbsp Caesar dressing",
+      "1 tbsp olive oil",
+      "Salt and pepper",
+    ],
+    instructions: [
+      "Season and grill chicken breast until cooked, then slice.",
+      "Wash and dry the lettuce thoroughly.",
+      "In a bowl, toss lettuce with Caesar dressing.",
+      "Top with grilled chicken, croutons, and parmesan.",
+      "Serve immediately for best texture.",
+    ],
+    nutrition: {
+      calories: "320 kcal",
+      protein: "28g",
+      carbs: "12g",
+      fat: "18g",
+      fiber: "3g",
+      sodium: "700mg",
+    },
+    tips: [
+      "Use fresh parmesan for better flavor.",
+      "Add dressing just before serving to keep lettuce crisp.",
+    ],
+  },
+  {
+    name: "Chicken Stir-Fry",
+    category: "Asian",
+    difficulty: "Easy",
+    image: "/Images/Chicken Stir-Fry.avif",
+    rating: "4.8",
+    reviews: "(530 reviews)",
+    prepTime: 15,
+    cookTime: 15,
+    servings: "3 people",
+    description:
+      "Quick and healthy chicken stir-fry with colorful vegetables in a savory sauce.",
+    ingredients: [
+      "400g chicken breast, sliced",
+      "1 bell pepper, sliced",
+      "1 cup broccoli florets",
+      "1 carrot, sliced",
+      "2 tbsp soy sauce",
+      "1 tbsp oyster sauce",
+      "1 tsp garlic, minced",
+      "1 tbsp vegetable oil",
+    ],
+    instructions: [
+      "Heat oil in a wok over high heat.",
+      "Add chicken and cook until browned.",
+      "Add garlic and vegetables, stir-fry for 5–6 minutes.",
+      "Pour in soy sauce and oyster sauce.",
+      "Cook for another 2–3 minutes and serve hot.",
+    ],
+    nutrition: {
+      calories: "410 kcal",
+      protein: "35g",
+      carbs: "20g",
+      fat: "18g",
+      fiber: "4g",
+      sodium: "880mg",
+    },
+    tips: [
+      "Cook on high heat for authentic stir-fry flavor.",
+      "Do not overcrowd the pan.",
+    ],
+  },
+  {
+    name: "Chicken Tikka Masala",
+    category: "Indian",
+    difficulty: "Medium",
+    image: "/Images/Chicken Tikka Masala.avif",
+    rating: "4.9",
+    reviews: "(890 reviews)",
+    prepTime: 30,
+    cookTime: 30,
+    servings: "4 people",
+    description:
+      "Tender grilled chicken in a rich, creamy spiced tomato sauce.",
+    ingredients: [
+      "500g chicken breast, cubed",
+      "1 cup yogurt",
+      "2 tbsp tikka masala paste",
+      "1 onion, chopped",
+      "400g tomato puree",
+      "1/2 cup cream",
+      "2 cloves garlic, minced",
+      "1 tsp ginger, grated",
+    ],
+    instructions: [
+      "Marinate chicken in yogurt and tikka paste for at least 1 hour.",
+      "Cook chicken in a pan until slightly charred.",
+      "In another pan, sauté onion, garlic, and ginger.",
+      "Add tomato puree and simmer for 10 minutes.",
+      "Stir in cream and cooked chicken, simmer for another 10 minutes.",
+    ],
+    nutrition: {
+      calories: "520 kcal",
+      protein: "36g",
+      carbs: "14g",
+      fat: "34g",
+      fiber: "3g",
+      sodium: "920mg",
+    },
+    tips: [
+      "Marinate overnight for deeper flavor.",
+      "Serve with naan or basmati rice.",
+    ],
+  },
+  {
+    name: "Honey Garlic Salmon",
+    category: "Seafood",
+    difficulty: "Easy",
+    image: "/Images/Honey Garlic Salmon.avif",
+    rating: "4.8",
+    reviews: "(670 reviews)",
+    prepTime: 10,
+    cookTime: 15,
+    servings: "2 people",
+    description:
+      "Juicy salmon fillets glazed with a sweet and savory honey garlic sauce.",
+    ingredients: [
+      "2 salmon fillets",
+      "3 tbsp honey",
+      "2 tbsp soy sauce",
+      "2 cloves garlic, minced",
+      "1 tbsp lemon juice",
+      "1 tbsp olive oil",
+    ],
+    instructions: [
+      "Season salmon with salt and pepper.",
+      "Heat oil in a pan and sear salmon for 4–5 minutes per side.",
+      "Mix honey, soy sauce, garlic, and lemon juice.",
+      "Pour sauce over salmon and simmer until thickened.",
+      "Spoon sauce over fish and serve.",
+    ],
+    nutrition: {
+      calories: "480 kcal",
+      protein: "34g",
+      carbs: "22g",
+      fat: "26g",
+      fiber: "1g",
+      sodium: "780mg",
+    },
+    tips: [
+      "Do not overcook salmon to keep it tender.",
+      "Garnish with sesame seeds or green onions.",
+    ],
+  },
 ];
 
-var recipesArr = [];
-
-// function displayRecipe(recipe) {
-//   var randomIndex = Math.floor(Math.random() * recipes.length);
-//   var randomRecipe = recipes[randomIndex];
-//   console.log(randomRecipe);
-// }
-
-// Step 1 & 2: Create a function that takes a single recipe object and updates the screen
 function displayRecipe(recipe) {
-  console.log("Starting to load recipe:", recipe.name);
-
   recipeImage.src = recipe.image;
+  recipeImage.alt = recipe.name;
 
   recipeName.textContent = recipe.name;
   recipeDescription.textContent = recipe.description;
@@ -431,13 +586,10 @@ function displayRecipe(recipe) {
   fiberValue.textContent = recipe.nutrition.fiber;
   sodiumValue.textContent = recipe.nutrition.sodium;
 
-  console.log("Nutrition data updated!");
-
   prepTime.textContent = recipe.prepTime + " min";
   cookTime.textContent = recipe.cookTime + " min";
 
   var totalTime = recipe.prepTime + recipe.cookTime;
-  console.log("Total recipe time is:", totalTime, "minutes");
 
   if (totalTime > 45) {
     timeWarning.style.display = "block";
@@ -446,13 +598,9 @@ function displayRecipe(recipe) {
   }
 
   // Update Ingredients List
-  ingredientsList.innerHTML = ""; // 1. First, we must clear out whatever ingredients were already sitting in the HTML
-  // 2. Loop through the Ingredients array
+  ingredientsList.innerHTML = "";
   for (var i = 0; i < recipe.ingredients.length; i++) {
-    // We grab the specific ingredient we are currently looking at
     var currentIngredient = recipe.ingredients[i];
-    // 3. We inject the HTML block, adding the number and the text
-    // Notice we use ${i + 1} for the number, because 'i' starts at 0!
     ingredientsList.innerHTML += `
       <li class="d-flex align-items-center mb-3">
         <div class="d-flex justify-content-center align-items-center rounded-circle text-white fw-bold flex-shrink-0 me-3" style="background-color: #f54a00; width: 24px; height: 24px; font-size: 0.8rem;">
@@ -464,11 +612,9 @@ function displayRecipe(recipe) {
   }
 
   // Update Instructions List
-  instructionsList.innerHTML = ""; // 1. Clear the old instructions
-  // 2. Loop through the instructions array
+  instructionsList.innerHTML = "";
   for (var j = 0; j < recipe.instructions.length; j++) {
     var currentInstruction = recipe.instructions[j];
-    // 3. Inject the HTML (Notice the slightly different HTML structure for instructions)
     instructionsList.innerHTML += `
       <li class="d-flex align-items-start mb-4">
         <div class="number d-flex justify-content-center align-items-center flex-shrink-0 rounded-4 fs-5 fw-bold text-white me-3" style="background-color: #f54a00; width: 32px; height: 32px; font-size: 0.9rem;">
@@ -482,11 +628,9 @@ function displayRecipe(recipe) {
   }
 
   // Update Chef's Tips List
-  tipsList.innerHTML = ""; // 1. Clear the old tips
-  // 2. Loop through the tips array
+  tipsList.innerHTML = "";
   for (var k = 0; k < recipe.tips.length; k++) {
     var currentTip = recipe.tips[k];
-    // 3. Inject the HTML (Tips use a checkmark icon instead of numbers!)
     tipsList.innerHTML += `
       <div class="tip d-flex align-items-start p-3 mb-3 rounded-end-3" style="background-color: #fffbf0; border-left: 4px solid #ffc107;">
         <i class="fa-solid fa-circle-check mt-1 me-2" style="color: #f54a00;"></i>
@@ -494,9 +638,17 @@ function displayRecipe(recipe) {
       </div>
     `;
   }
-  var currentRecipeIndex = 0;
 }
 
-// TEST IT MANUALLY:
-// Let's test it with index 3 (BBQ Pulled Pork) which has extendedTime: true
-displayRecipe(recipes[3]);
+var currentIndex = Math.floor(Math.random() * recipes.length);
+var randomRecipe = recipes[currentIndex];
+displayRecipe(randomRecipe);
+
+tryAnotherBtn.onclick = function () {
+  var randomIndex;
+  do {
+    randomIndex = Math.floor(Math.random() * recipes.length);
+  } while (randomIndex === currentIndex);
+  currentIndex = randomIndex;
+  displayRecipe(recipes[currentIndex]);
+};
